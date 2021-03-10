@@ -17,7 +17,7 @@ namespace C_1_base
 
         public static double SquerOfTrungle(uint a, uint b)
         {
-            throw new NotImplementedException();
+            return (double) a * b / 2;
         }
         #endregion
 
@@ -26,12 +26,23 @@ namespace C_1_base
         /*
          * На вход подаются длины трех отрезков, верните true, если они могут образовать тругольник, в обратном случае верните false
          * 
-         * Условие существования треугольника - a*a меньше или равно b*b + c*c, должно выполняться для любой a 
+         * Условие существования треугольника - a меньше или равно b + c, должно выполняться для любой a 
         */
 
         public static bool isTrungle(uint a, uint b, uint c)
         {
-            throw new NotImplementedException();
+            if (a + b <= c || a + c <= b || b + c <= a)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool isTrungle(double a, double b, double c)
+        {
+            if (a + b <= c || a + c <= b || b + c <= a)
+                return false;
+            else
+                return true;
         }
         #endregion
 
@@ -43,7 +54,17 @@ namespace C_1_base
 
         public static int Arifmetika(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a * b > 0)
+            {
+                return a + b;
+            }
+            else
+            {
+                if (a < 0 && b > -a)
+                    return a + b;
+                else
+                    return -a - b;
+            }
         }
         #endregion
 
@@ -55,7 +76,12 @@ namespace C_1_base
 
         public static int Fuc(int a)
         {
-            throw new NotImplementedException();
+            int sum = 1;
+            for (int i = 1; i <= a; i++)
+            {
+                sum *= i;
+            }
+            return sum;
         }
         #endregion
 
@@ -67,7 +93,12 @@ namespace C_1_base
 
         public static int[] ArrayCreate(int n)
         {
-            throw new NotImplementedException();
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = n - i;
+            }
+            return arr;
         }
         #endregion
 
@@ -79,7 +110,15 @@ namespace C_1_base
 
         public static int MaxSearch(int[] array)
         {
-            throw new NotImplementedException();
+            int max = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > array[max])
+                {
+                    max = i;
+                }
+            }
+            return max;
         }
         #endregion
 
@@ -91,7 +130,12 @@ namespace C_1_base
 
         public static int[] ArrayCopy(int[] array)
         {
-            throw new NotImplementedException();
+            int[] array2 = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array2[i] = array[i];
+            }
+            return array2;
         }
         #endregion
 
@@ -103,7 +147,10 @@ namespace C_1_base
 
         public static int Fibonachi(int n)
         {
-            throw new NotImplementedException();
+            if (n == 0 || n == 1)
+                return 1;
+            else
+                return Fibonachi(n - 1) + Fibonachi(n - 2);
         }
         #endregion
 
@@ -116,7 +163,8 @@ namespace C_1_base
 
         public static int HardArray(int[] intput, out int[] output)
         {
-            throw new NotImplementedException();
+            output = ArrayCopy(intput);
+            return intput[MaxSearch(intput)];
         }
         #endregion
 
@@ -131,7 +179,11 @@ namespace C_1_base
 
         public static void Fight(ref int health1, int power1, ref int health2, int power2)
         {
-            throw new NotImplementedException();
+            while (health1 > 0 && health2 > 0)
+            {
+                health1 -= power2;
+                health2 -= power1;
+            }
         }
         #endregion
     }

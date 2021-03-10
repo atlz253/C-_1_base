@@ -44,5 +44,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YourTasksHere2.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C_1_base\C_1_base.csproj">
+      <Project>{eed9a6ab-6106-44b2-9972-3a4eee191d45}</Project>
+      <Name>C_1_base</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
